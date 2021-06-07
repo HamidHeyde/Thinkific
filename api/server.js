@@ -26,7 +26,7 @@ app.use("/v1", appRouter);
 
 //Static Route
 if (process.env.NODE_ENV == 'production'){
-    var frontEndPath = path.join(__dirname,'../','app','build');
+    var frontEndPath = path.join(__dirname,'../','build');
     app.use("/", express.static(frontEndPath));
 }
 
