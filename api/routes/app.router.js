@@ -8,6 +8,8 @@ const router = new express.Router();
 //Authentication
 router.route("/registerUser").post(userCtl.registerUser);
 router.route("/loginUser").post(userCtl.loginUser);
+router.route("/google").post(userCtl.loginGoogle);
+router.route("/facebook").post(userCtl.loginFacebook);
 
 //Counter
 router.route("/current").get(helpers.authCheck,counterCtl.getCurrentCounter);
