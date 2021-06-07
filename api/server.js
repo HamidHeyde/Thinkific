@@ -1,7 +1,7 @@
 // Package Import
 const express = require('express');
 const cors = require('cors');
-const morgan = require('morgan');
+
 var bodyParser = require('body-parser');
 var path = require ('path');
 var appRouter = require('./routes/app.router')
@@ -17,6 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 if (process.env.NODE_ENV == 'development'){
     app.use(cors({origin: process.env.CLIENT_URL}));
+    const morgan = require('morgan');
     app.use(morgan("dev"));
 }
 
