@@ -1,0 +1,118 @@
+@import 'main_extend';
+
+.vrow{
+    @extend .display-flex, .flex-column;
+    @extend .col-12, .py-1;
+}
+
+.appWrapper{
+    @extend .display-flex, .flex-column, .justify-content-center, .align-items-center;
+    @extend .h-screen, .w-screen, .text-base;
+}
+.error{
+    color: $red-700;
+    background-color: $red-100;
+}
+.success{
+    color: $green-700;
+    background-color: $green-100;
+}
+.noMessage{
+    color: $blue-700;
+    background-color: $blue-100;
+}
+.formWrapper{
+    background-color: $white-900;
+    @extend .display-flex, .flex-column;
+    @extend .col-4, .text-sm, .p-5;
+
+    & .header{
+        color: $primary;
+        @extend .display-flex, .flex-column, .justify-content-center, .align-items-center; 
+        @extend .text-2xl,.p-5;
+    }
+
+    & .headerMessage{
+        @extend .display-flex, .flex-column, .justify-content-center, .align-items-center;
+        @extend .py-5;
+        @extend .text-sm;
+        border-radius: 5px;
+    }
+
+    & .formTextGroup{
+        @extend .display-flex, .flex-column, .justify-content-center, .align-items-start;;
+        @extend .col-12;
+        position: relative;
+
+        & .formTextbox{
+            background-color: $textbox-background;
+            @extend .col-12, .text-sm, .p-3;
+            border: none;
+            border-radius: 8px;
+            box-sizing: border-box;
+
+            &:focus{
+                outline: none;
+            }
+        }
+
+        & .passwordEye{
+            @extend .col-twothird, .mr-3;
+            position: absolute;
+            right: 0;
+            z-index: 30;
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+
+    & .formButton, .formButtonGoogle{
+        background-color: $primary;
+        color: $white-900;
+        @extend .text-base, .p-2;
+        border-radius: 8px;
+        border: 2px $primary solid;
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        &:focus{
+            outline: none;
+        }
+    }
+
+    & .formButtonGoogle{
+        color: $primary;
+        background-color:$white-900;
+
+        &:hover{
+            background-color: $primary;
+            color: $white-900;
+            cursor: pointer;
+        }
+
+        &:focus{
+            outline: none;
+        }
+    }
+
+    & .formSubtitle{
+        color: $primary;
+        @extend .display-flex, .flex-row, .justify-content-center;
+        @extend .col-12, .text-xss, .p-1;
+    }
+
+    & .formLink{
+        color: $primary;
+        @extend .text-xss, .ml-1;
+        text-decoration: underline;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+}
